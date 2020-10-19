@@ -1,0 +1,283 @@
+LIB CONNECT TO 'Microsoft_SQL_Server_XXXXXXXXXXXXXX (brighthorizons_XXXXXXXX)';
+
+Consultant_Chats:
+
+	LOAD interval_start&'|'&purecloud_id&'|'&consultant as [%key field], 
+    interval_start,
+    consultant,
+    purecloud_id,
+	media as chat_media, 
+	answered as chat_answered, 
+	handle as chat_handle, 
+	avg_handle as chat_avg_handle, 
+	avg_talk as chat_avg_talk, 
+	avg_hold as chat_avg_hold, 
+	avg_acw as chat_avg_acw, 
+	total_handle as chat_total_handle, 
+	total_talk as chat_total_talk, 
+	total_hold as chat_total_hold, 
+	total_acw as chat_total_acw, 
+	held as chat_held, 
+	transferred as chat_transferred, 
+	outbound as chat_outbound;
+
+[Consultant_Chats]:
+SELECT "interval_start",
+	"interval_end",
+	"interval_complete",
+	filters,
+	media,
+	"purecloud_id",
+	consultant,
+	"division_id",
+	"division_name",
+	answered,
+	handle,
+	"avg_handle",
+	"avg_talk",
+	"avg_hold",
+	"avg_acw",
+	"total_handle",
+	"total_talk",
+	"total_hold",
+	"total_acw",
+	held,
+	transferred,
+	outbound,
+	"alert_no_answer",
+	"total_alert_no_answer",
+	alert,
+	"total_alert",
+	"avg_contacting",
+	"avg_dailing",
+	"total_contacting",
+	"total_dailing"
+FROM "CC_Reporting_Dev".dbo."Consultant_Chats";
+
+Consultant_Email:
+
+	LOAD interval_start&'|'&purecloud_id&'|'&consultant as [%key field], 
+    interval_start,
+    consultant,
+    purecloud_id,
+	media as email_media, 
+	answered as email_answered, 
+	handle as email_handle, 
+	avg_handle as email_avg_handle, 
+	avg_talk as email_avg_talk, 
+	avg_hold as email_avg_hold, 
+	avg_acw as email_avg_acw, 
+	total_handle as email_total_handle, 
+	total_talk as email_total_talk, 
+	total_hold as email_total_hold, 
+	total_acw as email_total_acw, 
+	held as email_held, 
+	transferred as email_transferred, 
+	outbound as email_outbound;
+
+[Consultant_Emails]:
+SELECT "interval_start",
+	"interval_end",
+	"interval_complete",
+	filters,
+	media,
+	"purecloud_id",
+	consultant,
+	"division_id",
+	"division_name",
+	answered,
+	handle,
+	"avg_handle",
+	"avg_talk",
+	"avg_hold",
+	"avg_acw",
+	"total_handle",
+	"total_talk",
+	"total_hold",
+	"total_acw",
+	held,
+	transferred,
+	outbound,
+	"alert_no_answer",
+	"total_alert_no_answer",
+	alert,
+	"total_alert",
+	"avg_contacting",
+	"avg_dailing",
+	"total_contacting",
+	"total_dailing"
+FROM "CC_Reporting_Dev".dbo."Consultant_Email";
+
+Consultant_Inbound:
+
+	LOAD interval_start&'|'&purecloud_id&'|'&consultant as [%key field], 
+    interval_start,
+    consultant,
+    purecloud_id,
+	media as inbound_media, 
+	answered as inbound_answered, 
+	handle as inbound_handle, 
+	avg_handle as inbound_avg_handle, 
+	avg_talk as inbound_avg_talk, 
+	avg_hold as inbound_avg_hold, 
+	avg_acw as inbound_avg_acw, 
+	total_handle as inbound_total_handle, 
+	total_talk as inbound_total_talk, 
+	total_hold as inbound_total_hold, 
+	total_acw as inbound_total_acw, 
+	held as inbound_held, 
+	transferred as inbound_transferred, 
+	outbound as inbound_outbound;
+
+[Consultant_Inbound]:
+SELECT "interval_start",
+	"interval_end",
+	"interval_complete",
+	filters,
+	media,
+	"purecloud_id",
+	consultant,
+	"division_id",
+	"division_name",
+	answered,
+	handle,
+	"avg_handle",
+	"avg_talk",
+	"avg_hold",
+	"avg_acw",
+	"total_handle",
+	"total_talk",
+	"total_hold",
+	"total_acw",
+	held,
+	transferred,
+	outbound,
+	"alert_no_answer",
+	"total_alert_no_answer",
+	alert,
+	"total_alert",
+	"avg_contacting",
+	"avg_dailing",
+	"total_contacting",
+	"total_dailing"
+FROM "CC_Reporting_Dev".dbo."Consultant_Inbound_Calls";
+
+
+Consultant_Outbound:
+
+	LOAD interval_start&'|'&purecloud_id&'|'&consultant as [%key field], 
+    interval_start,
+    consultant,
+    purecloud_id,
+	media as outbound_media, 
+	answered as outbound_answered, 
+	handle as outbound_handle, 
+	avg_handle as outbound_avg_handle, 
+	avg_talk as outbound_avg_talk, 
+	avg_hold as outbound_avg_hold, 
+	avg_acw as outbound_avg_acw, 
+	total_handle as outbound_total_handle, 
+	total_talk as outbound_total_talk, 
+	total_hold as outbound_total_hold, 
+	total_acw as outbound_total_acw, 
+	held as outbound_held, 
+	transferred as outbound_transferred, 
+	outbound as outbound_outbound;
+
+[Consultant_Outbound]:
+SELECT "interval_start",
+	"interval_end",
+	"interval_complete",
+	filters,
+	media,
+	"purecloud_id",
+	consultant,
+	"division_id",
+	"division_name",
+	answered,
+	handle,
+	"avg_handle",
+	"avg_talk",
+	"avg_hold",
+	"avg_acw",
+	"total_handle",
+	"total_talk",
+	"total_hold",
+	"total_acw",
+	held,
+	transferred,
+	outbound,
+	"alert_no_answer",
+	"total_alert_no_answer",
+	alert,
+	"total_alert",
+	"avg_contacting",
+	"avg_dailing",
+	"total_contacting",
+	"total_dailing"
+FROM "CC_Reporting_Dev".dbo."Consultant_Outbound_Calls";
+
+Link_Table:
+	LOAD 
+    	Distinct
+          [%key field],
+          consultant&'|'&interval_start as [%key2 field],
+          interval_start as Date,
+          consultant,
+          purecloud_id
+    Resident Consultant_Chats;
+    
+    Concatenate(Link_Table)
+    Load
+    	Distinct
+          [%key field],
+          consultant&'|'&interval_start as [%key2 field],
+          interval_start as Date,
+          consultant,
+          purecloud_id
+    Resident [Consultant_Emails];
+    
+    Concatenate(Link_Table)
+    Load
+    	Distinct
+          [%key field],
+          consultant&'|'&interval_start as [%key2 field],
+          interval_start as Date,
+          consultant,
+          purecloud_id
+    Resident [Consultant_Inbound];
+    
+    Concatenate(Link_Table)
+    Load
+    	Distinct
+          [%key field],
+          consultant&'|'&interval_start as [%key2 field],
+          interval_start as Date,
+          consultant,
+          purecloud_id
+    Resident [Consultant_Outbound];
+    
+    Drop Fields
+    	interval_start,
+        consultant,
+        purecloud_id
+        from Consultant_Chats;
+        
+     Drop Fields
+    	interval_start,
+        consultant,
+        purecloud_id
+        from Consultant_Emails;
+     
+      Drop Fields
+    	interval_start,
+        consultant,
+        purecloud_id
+        from Consultant_Inbound;
+        
+       Drop Fields
+    	interval_start,
+        consultant,
+        purecloud_id
+        from Consultant_Outbound;
+    
