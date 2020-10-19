@@ -1,0 +1,45 @@
+LIB CONNECT TO 'Microsoft_SQL_Server_XXXXXXXXXXXXXX (brighthorizons_XXXXXXXX)';
+
+Consultant_Adherence:
+	LOAD consultant&'|'&date as [%key2 field],
+    adherence,
+    exceptions,
+    exceptions_duration,
+    scheduled_minutes_adherence,
+    scheduled_minutes,
+    exception_duration_minutes,
+    actual_time_minutes;
+    
+[Consultant_Adherence]:
+	Select "consultant",
+    "adherence",
+    "conformance",
+    "exceptions",
+    "exceptions_duration",
+    "net_impact",
+    "scheduled_minutes_adherence",
+    "scheduled_minutes",
+    "exception_duration_minutes",
+    "actual_time_minutes",
+    "scheduled_minutes_on_queue",
+    "work_time_minutes_on_queue",
+    "date"
+    
+FROM "CC_Reporting_Dev".dbo."Historical_Adherence";
+
+Consultant_Audits:
+	LOAD consultant&'|'&Num(Date(Floor(interaction_date_time), 'MM/DD/YYYY')) as [%key2 field],
+    evaluation_date_time,
+    evaluator,
+    form,
+    score;
+    
+[Consultant_Audits]:
+	Select "consultant",
+    "interaction_date_time",
+    "evaluation_date_time",
+    "evaluator",
+    "form",
+    "score"
+    
+FROM "CC_Reporting_Dev".dbo."Consultant_Audits";
