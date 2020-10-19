@@ -1,0 +1,45 @@
+LIB CONNECT TO 'Microsoft_SQL_Server_XXXXXXXXXXXXXX (brighthorizons_XXXXXXXX)';
+
+Consultant_Status:
+	LOAD interval_start&'|'&purecloud_id&'|'&consultant as [%key field], 
+    logged_in,
+    on_queue,
+    idle,
+    not_responding,
+    off_queue,
+    available,
+    busy,
+    away,
+    break_time as break,
+    meal,
+    sys_away,
+    meeting,
+    training,
+    interacting,
+    communicating,
+    logged_in-break_time-meal-meeting-training as Counted_Staffed_Time,
+    logged_in-meal as Staffed_minus_lunch;
+    
+[Consultant_Status]:
+	Select "interval_start",
+    "interval_end",
+    "interval_complete",
+    "purecloud_id",
+    "consultant",
+    "logged_in",
+    "on_queue",
+    "idle",
+    "not_responding",
+    "off_queue",
+    "available",
+    "busy",
+    "away",
+    "break_time",
+    "meal",
+    "sys_away",
+    "meeting",
+    "training",
+    "interacting",
+    "communicating"
+    
+FROM "CC_Reporting_Dev".dbo."Agent_Status";
