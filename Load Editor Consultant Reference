@@ -1,0 +1,29 @@
+LIB CONNECT TO 'Microsoft_SQL_Server_XXXXXXXXXXXXXX (brighthorizons_XXXXXXXX)';
+
+Consultant_Reference:
+	LOAD consultant,
+    location as Location,
+    role as Role,
+    team_lead as "Team Lead",
+    weekly_hours as "Weekly Hours",
+    hire_date as "Hire Date";
+    
+[Consultant_Reference]:
+	Select "consultant",
+   	"location",
+    "role",
+    "purecloud_id",
+    "pendo_id",
+    "team_lead",
+    "weekly_hours",
+    "monday_hours",
+    "tuesday_hours",
+    "wednesday_hours",
+    "thursday_hours",
+    "friday_hours",
+    "saturday_hours",
+    "sunday_hours",
+    "hire_date"
+    
+FROM "CC_Reporting_Dev".dbo."Consultant_Reference";
+    
