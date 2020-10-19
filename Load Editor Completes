@@ -1,0 +1,31 @@
+LIB CONNECT TO 'Microsoft_SQL_Server_XXXXXXXXXXXXXX (brighthorizons_XXXXXXXX)';
+
+Confirms:
+	LOAD Consultant&'|'&Date as [%key2 field],
+    Confirms as confirm_count;
+
+    
+[Confirms]:
+	Select "Consultant",
+    "Confirms",
+	"Date"
+    
+FROM "CC_Reporting_Dev".dbo."Consultant_Confirms";
+
+
+Pendo_Activity:
+	LOAD consultant&'|'&date as [%key2 field],
+    unfilled as unfilled_count,
+    unserviceable as unserv_count,
+    cancelled as cancel_count;
+    
+    
+[Pendo_Activity]:
+	Select "pendo_id",
+    "consultant",
+	"unfilled",
+    "unserviceable",
+    "cancelled",
+    "date"
+    
+FROM "CC_Reporting_Dev".dbo."Consultant_Pendo_Activity";
